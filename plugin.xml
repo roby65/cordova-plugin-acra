@@ -11,6 +11,9 @@
     <js-module src="www/index.js" name="JSError">
         <clobbers target="jserror" />
     </js-module>
+    <js-module src="www/stacktrace.js" name="printStackTrace">
+        <clobbers target="printStackTrace" />
+    </js-module>
 
     <platform name="android">
         <config-file target="AndroidManifest.xml" parent="/*">
@@ -18,5 +21,8 @@
         </config-file>
         <source-file src="src/android/AcraPlugin.java" target-dir="src/com/zengularity/acraplugin" />
         <source-file src="src/android/acra-4.5.0.jar" target-dir="libs" />
-     </platform>
+    </platform>
+    <platform name="ios">
+        <!-- empty -->
+    </platform>
 </plugin>
