@@ -54,12 +54,14 @@ public class MyApp extends Application {
 ```
 
 then tell the AndroidManifest.xml to point to that Application by adding the following attribute
+
 ```
 android:name=".MyApp"
 ```
+
 to the application tag in the AndroidManifest.xml
 
- * for iOS, you need to provide the following 3 global variables:
+* for iOS, you need to provide the following 3 global variables:
 
 ```
 ACRA_SERVER = "http://my-server";
