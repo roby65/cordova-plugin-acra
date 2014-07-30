@@ -59,7 +59,8 @@ android:name=".MyApp"
 ```
 to the application tag in the AndroidManifest.xml
 
-    * for iOS, you need to provide the following 3 global variables:
+ * for iOS, you need to provide the following 3 global variables:
+
 ```
 ACRA_SERVER = "http://my-server";
 APP_VERSION_NAME = "http://my-server";
