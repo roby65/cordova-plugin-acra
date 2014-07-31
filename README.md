@@ -64,7 +64,11 @@ to the application tag in the AndroidManifest.xml
 * for iOS, you need to provide the following 3 global variables:
 
 ```
+// the url of the acra service
 ACRA_SERVER = "http://my-server";
-APP_VERSION_NAME = "http://my-server";
+// the version of you app
+APP_VERSION_NAME = "1.0.0";
+// the bundle id of your app, this is the cordova id and
+this makes your app unique
 PACKAGE_NAME = "my-bundle-id";
 ```
