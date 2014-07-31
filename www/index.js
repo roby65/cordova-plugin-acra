@@ -3,28 +3,29 @@
  */
 
 var config = {
-    ACRA_SERVER : window.ACRA_SERVER || "http://192.168.43.149:9000",
+    ACRA_SERVER : window.ACRA_SERVER || "http://192.168.0.48:9000",
     APP_VERSION_NAME : window.ACRA_SERVER || "default-0.0.1",
     APP_VERSION_CODE : 1,
     PACKAGE_NAME : window.PACKAGE_NAME || "default-bundleId",
     ANDROID_VERSION : "ios"
 };
 
-function report(err) {
+function report(err, source, line) {
+    var stack = window.printStackTrace({e:err});
     return {
         USER_CRASH_DATE: (new Date()).toISOString(),
         PACKAGE_NAME : config.PACKAGE_NAME,
         ANDROID_VERSION : 'ios-' + device.version,
-        CUSTOM_DATA: {
-            message: err.message,
-            line: err.line || 0,
-            sourceId: err.sourceId || "none"
+        CUSTOM_DATA : {
+            message: err.msg || err.message || err.toString() || "Oooooooooops",
+            line: line,
+            sourceId: source
         },
         PHONE_MODEL: device.model,
         APP_VERSION_NAME: config.APP_VERSION_NAME,
         APP_VERSION_CODE: config.APP_VERSION_CODE,
         REPORT_ID: (Math.random() * 10000).toString() + "/" + device.uuid,
-        STACK_TRACE: window.printStackTrace({e:err}).join(',')
+        STACK_TRACE: stack.join(',')
     };
 }
 
@@ -41,10 +42,10 @@ function xhr(method, url, data, cb) {
     x.send(JSON.stringify(data));
 }
 
-function send(err, sourceId, line) {
+function send(err, source, line) {
     if(device.platform !== 'Android') {
-        xhr('POST', config.ACRA_SERVER + '/report', report(err), function (err, response) {
-            console.log('error sent to acra, server response: ' + response);
+        xhr('POST', config.ACRA_SERVER + '/report', report(err, source, line), function (err, response) {
+            console.log('error sent to acra');
         });
     }
 }
