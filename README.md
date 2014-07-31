@@ -24,7 +24,7 @@ This plugins depends on the Cordova Device plugin: org.apache.cordova.device
 
 Usage
 -----
- * Install the plugin to your Cordova application: `cordova plugin add https://github.com/erwan/cordova-plugin-acra`
+ * Install the plugin to your Cordova application: `cordova plugin add path-to-plugin-folder`
  * for Android
  ** As the documentation of Acra says, create an Application class with the `ReportsCrashes` annotation with the address to your acra server like
 
