@@ -1,0 +1,28 @@
+{
+  "name": "acra-plugin",
+  "version": "1.0.0",
+  "description": "Cordova ACRA Plugin",
+  "cordova": {
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/roby65/cordova-plugin-acra"
+  },
+  "keywords": [
+    "cordova",
+    "acra"
+  ],
+  "engines": {
+    "cordovaDependencies": {
+      "0.0.0": {
+        "cordova-android": ">=4.0.0"
+      },
+      "2.0.0": {
+        "cordova": ">100"
+      }
+    }
+  }
+}
