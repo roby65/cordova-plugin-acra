@@ -3,14 +3,14 @@ package com.zengularity.acraplugin;
 import android.util.Log;
 import android.webkit.ConsoleMessage;
 import org.acra.ACRA;
-import org.apache.cordova.CordovaChromeClient;
+//import org.apache.cordova.CordovaChromeClient;
 import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaWebView;
 
 public class AcraPlugin extends CordovaPlugin {
 
-    class AcraChromeClient extends CordovaChromeClient {
+    /*class AcraChromeClient extends CordovaChromeClient {
         public AcraChromeClient(CordovaInterface cordova, CordovaWebView webView) {
             super(cordova, webView);
         }
@@ -24,11 +24,11 @@ public class AcraPlugin extends CordovaPlugin {
             }
             return super.onConsoleMessage(message);
         }
-    }
+    }*/
 
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
-        webView.setWebChromeClient(new AcraChromeClient(cordova, webView){});
+        //webView.setWebChromeClient(new AcraChromeClient(cordova, webView){});
     }
 
 }
